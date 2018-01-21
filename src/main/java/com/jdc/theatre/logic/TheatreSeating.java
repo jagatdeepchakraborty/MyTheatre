@@ -33,6 +33,7 @@ public class TheatreSeating {
         String[] rowSplit = null;
         String position;
         String returnMessage = "";
+        String message = "";
         for (String request : theatreObject.getRequests()) {
             found = false;
             rowSplit = null;
@@ -42,9 +43,10 @@ public class TheatreSeating {
                     position = seat.getKey();
                     if (Integer.parseInt(request.split(" ")[1]) <= availability) {
                         rowSplit = position.split(":");
-                        returnMessage = returnMessage + request.split(" ")[0] + " Row " +
-                                (Integer.parseInt(rowSplit[0]) + 1) + " Section " + (Integer.parseInt(rowSplit[1]) + 1) + "\n";
-                        System.out.println(returnMessage);
+                        message = request.split(" ")[0] + " Row " +
+                                (Integer.parseInt(rowSplit[0]) + 1) + " Section " + (Integer.parseInt(rowSplit[1]) + 1);
+                        returnMessage = returnMessage + message + "\n";
+                        System.out.println(message);
                         seat.setValue(availability - Integer.parseInt(request.split(" ")[1]));
                         found = true;
                         break;

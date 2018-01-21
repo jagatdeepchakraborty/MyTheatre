@@ -10,7 +10,6 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        Scanner in = new Scanner(System.in);
         String input = "6 6\n" +
                 "3 5 5 3\n" +
                 "4 6 6 4\n" +
@@ -25,11 +24,26 @@ public class Main {
                 "Williams 4\n" +
                 "Brown 8\n" +
                 "Miller 12";
+        Scanner in = new Scanner(System.in).useDelimiter("\n");
+        ArrayList<String> stdin = new ArrayList<String>();
+        try {
+            while (in.hasNextLine()) {
+                String s = in.nextLine();
+                if (s.equals("##")) {
+                    in.close();
+                } else {
+                    stdin.add(s);
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Scanner closed");
+        }
+
         //BufferedReader bin = new BufferedReader(new InputStreamReader(System.in));
         TheatreSeating theatreSeating = new TheatreSeating();
-        ArrayList<String> stdin = new ArrayList<String>();
-        String[] strArr = input.split("\n");
-        Arrays.stream(strArr).forEach(line -> stdin.add(line));
+
+        //String[] strArr = input.split("\n");
+        //Arrays.stream(strArr).forEach(line -> stdin.add(line));
         theatreSeating.efficientSeating(stdin);
     }
 }
