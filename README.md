@@ -1,11 +1,13 @@
 # MyTheatre
 Program to parse a theater layout and a list of ticket requests and produce a list of tickets or explanations in the same order as the requests
- ##Prerequisites
- IDE capable with Java 8 and Gradle.
- ##How to Run
- * Run the Main file.
- * Paste input in console in the below format
- * The theater layout is made up of 1 or more rows.  Each row is made up of 1 or more sections separated by a space.
+ 
+## Prerequisites
+IDE capable with Java 8 and Gradle.
+
+## How to Run
+* Run the Main file.
+* Paste input in console in the below format
+* The theater layout is made up of 1 or more rows.  Each row is made up of 1 or more sections separated by a space.
 * After the theater layout, there is one empty line, followed by 1 or more theater requests.  The theater request is made up of a name followed by a space and the number of requested tickets.
 * The Input Sequence should end with 2 lines of ## to let the program know that its the end of input.
  ```
